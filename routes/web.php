@@ -35,6 +35,6 @@ Route::get('/', function(){
 Route::get('/inicio', 'HomeController@mostrarProductos');
 
 //Ruta a registro
-Route::get('/registro', function (){
+Route::POST('/registro', function (){
     return view('registro');
 });
