@@ -16,7 +16,7 @@
       </div>     
       <div class="card-body">
     <!-- Registro -->
-              <form class="form" name="formRegistro"  novalidate action="" method="POST" enctype="multipart/form-data">
+              <form class="form" name="formRegistro"  novalidate action="/registro" method="POST" enctype="multipart/form-data">
               {{csrf_field()}} 
                     <div class="form-row">
                             <div class="form-group col-md-6">
@@ -33,15 +33,15 @@
                       </div>
                       <div class="form-group col-md-6">
                         <label for="password">Contraseña</label>
-                        <input requiered type="password" value="" name = "contraseña"  class="form-control" id="password" placeholder="Password">
+                        <input requiered type="password" value="" name = "password"  class="form-control" id="password" placeholder="Password">
                       </div>
-                      <div class="form-group col-md-6">
+                      <!-- <div class="form-group col-md-6">
                         <label for="password">Repetir contraseña</label>
                         <input requiered type="password" name="contraseña2" value=""  class="form-control" id="repassword" placeholder="Repetir password">
                       </div>
-                    </div>
+                    </div> -->
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label for="inputAddress">Dirección</label>
                       <input requiered type="text" name="direccion" class="form-control" id="inputAddress" placeholder="1234 Main St">
                     </div>
@@ -50,37 +50,8 @@
                       <div class="form-group col-md-6">
                         <label for="inputCity">Ciudad</label>
                         <input type="text" name="ciudad" class="form-control" id="inputCity">
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputState">Provincia</label>
-                        <select id="inputState" class="form-control" name="provincia">
-                                <option selected>Seleccione...</option>
-                                <option>Buenos Aires</option>
-                                <option>Catamarca</option>
-                                <option>Chaco</option>
-                                <option>Chubut</option>
-                                <option>Córdoba</option>
-                                <option>Corrientes</option>
-                                <option>Entre rios</option>
-                                <option>Formosa</option>
-                                <option>Jujuy</option>
-                                <option>La Pampa</option>
-                                <option>La Rioja</option>
-                                <option>Mendoza</option>
-                                <option>Misiones</option>
-                                <option>Neuquén</option>
-                                <option>Río Negro</option>
-                                <option>Salta</option>
-                                <option>San Juan</option>
-                                <option>San Luis</option>
-                                <option>Santa Cruz</option>
-                                <option>Santa Fe</option>
-                                <option>Santiago del Estero</option>
-                                <option>Tierra del Fuego</option>
-                                <option>Tucumán</option>
-                                
-                              </select>
-                      </div>
+                      </div>  -->
+                      
                       
                     <!-- <div class="form-group">
                         <label for="avatar">Avatar</label>

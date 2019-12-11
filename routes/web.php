@@ -35,6 +35,14 @@ Route::get('/', function(){
 Route::get('/inicio', 'HomeController@mostrarProductos');
 
 //Ruta a registro
-Route::POST('/registro', function (){
+Route::post('/registro', 'registroController@crear');
+Route::get('/registro', function(){
     return view('registro');
 });
+
+//Ruta a login
+Route::post('/login', 'loginController@crear');
+Route::get('/login', function(){
+    return view('login');
+});
+
