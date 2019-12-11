@@ -15,7 +15,7 @@
 // Route::get('/nombre que quieras q se vea en el navegador', function () {
 //     return view('nombre del archivo .blade');
 // });
-
+Auth::routes();
 //Ruta a inicio de sesion:
 Route::get('/inicioSesion', function(){
     return view('inicioSesion');
@@ -34,15 +34,8 @@ Route::get('/', function(){
 //Ruta a productos:
 Route::get('/inicio', 'HomeController@mostrarProductos');
 
-//Ruta a registro
-Route::post('/registro', 'registroController@crear');
-Route::get('/registro', function(){
-    return view('registro');
-});
 
-//Ruta a login
-Route::post('/login', 'loginController@crear');
-Route::get('/login', function(){
-    return view('login');
-});
+Route::get('/usuarioXid/1', 'registroController@traerUsuario');
 
+
+Route::get('/home', 'HomeController@index')->name('home');

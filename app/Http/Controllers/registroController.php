@@ -20,7 +20,8 @@ class registroController extends Controller
         return view('login');
     }
 
-    public function validar(){
-
+    public function traerUsuario($id){
+        $usuario = usuario::find($id);
+        return view('usuarioXid', compact('usuario'));
     }
 }
