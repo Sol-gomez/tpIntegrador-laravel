@@ -35,7 +35,16 @@ Route::get('/', function(){
 Route::get('/inicio', 'HomeController@mostrarProductos');
 
 
-Route::get('/usuarioXid/1', 'registroController@traerUsuario');
+Route::get('/userXid/1', 'registroController@traerUsuario');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Administrador de Productos : todas las funciones estan dentro del controller AdminProductController.
+Route::get('/adminProducts', 'AdminProductController@index'); //para administrar un producto
+
+Route::get('/createProduct','AdminProductController@create'); //para crear un producto
+
+Route::get('/saveProduct', 'AdminProductController@save'); //para guardar un producto
+
+Route::get('/deleteProduct', 'AdminProductController@delete'); //para borrar un product

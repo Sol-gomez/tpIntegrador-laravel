@@ -3,12 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\usuario;
+use App\Product;
+use App\Comment;
 
 class usuario extends Model
 {
-    public $table = "usuarios";
-    public $id = "id";
-    public $timeStamps = true;
-    public $guarded = [];
+    protected $guarded = [];
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }
