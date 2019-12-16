@@ -31,8 +31,10 @@ Route::get('/', function(){
     return view('index');
 });
 
-//Ruta a productos:
-Route::get('/inicio', 'HomeController@mostrarProductos');
+//Ruta a productos: 
+Route::get('/inicio', function(){
+    return view('productos  ');
+});
 
 
 Route::get('/userXid/1', 'registroController@traerUsuario');
