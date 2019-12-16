@@ -1,5 +1,0 @@
-@include('layouts.partials.header')
-@include('layouts.partials.menu')
-@include('layouts.partials.carrousel')
-@yield('content')
-@include('layouts.partials.footer')

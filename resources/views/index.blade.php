@@ -1,34 +1,33 @@
-@extends('layouts.main')
+@extends('layouts.app')
 @section('content')
-    <h2 class="ad_producto">Administración de los Productos</h2>
-    <br>
-    <a href="/createProduct">Incluir un producto</a>    
-    <br>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nombre del Producto</th>
-               
-                <th>Ver</th>
-                <th>Editar</th>
-                <th>Borrar</th>
-            </tr>
-        </thead>
-        <tbody>
-                @foreach ($productos as $producto)
-                <tr>
-                <td>{{$producto->id}}</td>
-                    <td>{{$producto->name}}</td>
-                    
-                
-                    <td><a href="/showProduct/{{$producto->id}}">Ver</a></td>
-                    <td><a href="/editProduct/{{$producto->id}}">Editar</a></td>    
-                    <td><a href="/deleteProduct/{{$producto->id}}">Borrar</a></td>
-                </tr>
-                @endforeach
-        </tbody>
-
-    </table>
-
+<div class="container-fluid"> 
+          <div class="contenedorEntrada-S">    
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img class="d-block w-100" src="/img/banner.jpg" style="width: 100%;height: 570px;" alt="First slide">
+        </div>  
+        <div class="carousel-item">
+        <img class="d-block w-100" src="/img/banner1.1.png" style="width: 100%;height: 570px;" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+        <img class="d-block w-100" src="/img/banner2.jpg" style="width: 100%;height: 570px;" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- <marquee direction="left" width="100%" bgcolor="black" scrollamount="3"><font size="5" color="white"> Comienza a intercambiar tus productos </marquee> -->
+    </div>
 @endsection
