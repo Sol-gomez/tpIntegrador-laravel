@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `trock_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `trock_db`;
 -- MySQL dump 10.13  Distrib 5.7.28, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: trock_db
@@ -27,6 +25,7 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
+  `categoriescol` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -103,9 +102,14 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `description` varchar(45) DEFAULT NULL,
-  `idCategoria` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `slug` varchar(45) DEFAULT NULL,
+  `precio` int(11) NOT NULL,
+  `extract` varchar(45) DEFAULT NULL,
+  `image` varchar(45) DEFAULT NULL,
+  `visible` varchar(45) DEFAULT NULL,
+  `category_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`user_id`,`category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -131,7 +135,9 @@ CREATE TABLE `users` (
   `surname` varchar(45) NOT NULL,
   `mail` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
+  `comment_id` varchar(45) NOT NULL,
+  `product_id` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`,`comment_id`,`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -177,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-13  2:30:21
+-- Dump completed on 2019-12-17 19:39:45
