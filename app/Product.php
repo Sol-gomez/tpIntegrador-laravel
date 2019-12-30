@@ -12,7 +12,14 @@ class Product extends Model
 {
     protected $guarded = [];
 
-    public function users(){
+    public function user(){
+        return $this->belongsTo('App\User', 'user_id');
+      }
+      public function photos(){
+        return $this->hasMany('App\ImagesProducts', 'product_id');
+      }
+
+   /* public function users(){
         return $this->belongsTo(usuario::class);
     }
 
@@ -26,5 +33,5 @@ class Product extends Model
 
     public function comments(){
         return $this->hasMany(Comment::class);
-    }
+    } */
 }

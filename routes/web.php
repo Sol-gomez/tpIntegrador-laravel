@@ -33,12 +33,29 @@ Route::get('/', function(){
 
 //Ruta a productos: 
 Route::get('/inicio', function(){
-    return view('productos  ');
+    return view('productos');
+});
+
+Route::get('/cargarProducto', function(){
+    return view('cargarProducto');
 });
 
 
-Route::get('/userXid/1', 'registroController@traerUsuario');
+//Ruta a cart: 
+/*Route::get('/cart', function(){
+    return view('cart');
+});
 
+//Ruta a cart: 
+Route::get('/history', function(){
+    return view('history');
+});*/
+
+Route::get('/cartHistory','CartController@cartclose');
+
+Route::get('/cart','CartController@index');
+
+Route::get('/userXid/1', 'registroController@traerUsuario');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
